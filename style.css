@@ -84,11 +84,11 @@ h1 {
 }
 
 .btn-one {
-	background-color: darkorange;
+	background-color: palevioletred;
 }
 
 .btn-two:hover {
-	background-color: darkorange;
+	background-color: palevioletred;
 	transition: all 0.2s ease-in;
 }
 
@@ -164,7 +164,7 @@ h1 {
 }
 
 .form input.button {
-    background-color: #4CAF50; /* Green */
+    background-color: palevioletred;
     border: none;
     color: white;
     width: 71%;
@@ -175,6 +175,10 @@ h1 {
     font-size: 20px;
     margin: 4px 2px;
     cursor: pointer;
+ }
+
+ .form input.button:hover {
+	background-color: rgb(218, 91, 133);
  }
 
 input[type=number]::-webkit-inner-spin-button,
