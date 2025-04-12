@@ -1,23 +1,47 @@
+/* Reset básico */
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-	font-family: monospace;
+	font-family: 'Poppins', sans-serif;
 }
 
+/* Header con overlay */
 header {
+	position: relative;
 	background-image: url(assets/banner-bg.jpg);
 	height: 100vh;
 	background-size: cover;
 	background-position: center;
 }
 
+header::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 1;
+}
+
+/* Logo + nav */
+.logo {
+	width: 100px;
+	height: auto;
+	float: left;
+	margin-top: 30px;
+	position: relative;
+	z-index: 2;
+}
+
 .main-nav {
 	float: right;
 	list-style: none;
 	margin-top: 55px;
+	position: relative;
+	z-index: 2;
 }
 
 .main-nav li {
@@ -28,52 +52,43 @@ header {
 	color: white;
 	text-decoration: none;
 	padding: 5px 20px;
-	font-family: "Roboto", sans-serif;
 	font-size: 15px;
 }
 
-.main-nav li.active a {
-	border-bottom: 1px solid white;
-}
-
+.main-nav li.active a,
 .main-nav li a:hover {
 	border-bottom: 1px solid white;
-}
-
-.logo {
-	width: 100px;
-	height: auto;
-	float: left;
-	margin-top: 30px;
 }
 
 .row {
 	max-width: 1200px;
 	margin: auto;
+	position: relative;
+	z-index: 2;
 }
 
 .hero {
 	position: absolute;
 	top: 100px;
 	width: 100%;
+	text-align: center;
+	z-index: 2;
 }
 
 h1 {
-	font-family: "Roboto", sans-serif;
 	color: white;
 	text-transform: uppercase;
 	font-size: 70px;
-	text-align: center;
 	margin-top: 300px;
 }
 
+/* Botones */
 .button {
 	text-align: center;
 	margin-top: 50px;
 }
 
 .btn {
-	font-family: "Roboto", sans-serif;
 	border: 1px solid white;
 	padding: 10px 30px;
 	color: white;
@@ -92,110 +107,248 @@ h1 {
 	transition: all 0.2s ease-in;
 }
 
-.grid-container {
-	display: grid;
-  	grid-template-columns: auto auto;
-  	padding: 10px;
-}
-
-.grid-item {
-	padding: 20px;
+/* Secciones con imágenes */
+section {
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
 }
 
 .service {
 	background-image: url(assets/img-banner@2x.png);
-	height: 100vh;
-	background-size: cover;
-	background-position: center;
 }
 
 .about {
 	background-image: url(assets/DSC_0036.JPG);
-	height: 100vh;
-	background-size: cover;
-	background-position: center;
 }
 
 .blog {
 	background-image: url(assets/banner-texture@2x.png);
-	height: 100vh;
-	background-size: cover;
-	background-position: center;
-
 }
 
 .contact {
 	background-image: url(assets/img-contact-form-bg.jpg);
-	height: 100vh;
-	background-size: cover;
-	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 40px 20px;
 }
 
 .faq {
 	background-image: url(assets/img-prop-type@2x.jpg);
-	height: 100vh;
-	background-size: cover;
-	background-position: center;
 }
 
+/* FORMULARIO MEJORADO */
 .contact-form {
-	font-family: "Arial", "Helvetica", sans-serif;
-	margin: auto;
-	padding: 0 200px;
+	width: 100%;
+	max-width: 800px;
+	background: rgba(255, 255, 255, 0.9);
+	padding: 40px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.contact-form-left {
+	width: 100%;
+	max-width: 800px;
+	padding: 40px;
+
 }
 
 .contact-section-header {
 	color: #282828;
-	font-family: "Roboto", sans-serif;
 	font-size: 25px;
 	margin-bottom: 20px;
+	text-align: center;
 }
 
-.form input, textarea {
-	font-size: 20px;
-	text-decoration: none;
-	outline: none;
-	width: 70%;
-	height: 60px;
-	padding-left: 10px;
+.form input, .form textarea {
+	font-size: 22px;
+	width: 100%;
+	height: 70px;
+	padding: 10px;
 	border-radius: 6px;
-	border: none;
-	margin: 5px 0;
+	border: 1px solid #ccc;
+	margin: 10px 0;
+}
+
+.subject {
+	height: 170px;
+	resize: vertical;
+	color: black;
 }
 
 .form input.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    width: 71%;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    margin: 4px 2px;
-    cursor: pointer;
- }
+	background-color: #4CAF50;
+	color: white;
+	width: 100%;
+	padding: 15px;
+	font-size: 20px;
+	cursor: pointer;
+	border: none;
+	border-radius: 6px;
+	margin-top: 10px;
+}
 
 input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
- }
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
 
- .subject {
- 	height: 150px;
- 	color: black;
- }
 
-@media
-  (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi) {
-  	.blog {
-    	background-image: url(assets/banner-texture@2x.png) !important;
-  	}
 
-  	.faq {
-    	background-image: url(assets/img-prop-type@2x.jpg) !important;
-  	}
+/* BLOG y FAQ imágenes retina */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	.blog {
+		background-image: url(assets/banner-texture@2x.png) !important;
+	}
+	.faq {
+		background-image: url(assets/img-prop-type@2x.jpg) !important;
+	}
+}
+
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    justify-content: center;
+  }
+  
+  .contact-form-left {
+    display: none; /* Hace que el div izquierdo desaparezca */
+  }
+  
+  .contact-form {
+    /* Asegura que el formulario esté centrado */
+    margin: 0 auto;
+    width: 90%;
+    max-width: 500px;
+  }
+}
+
+/* Ocultar el checkbox que controla el menú */
+.menu-toggle {
+    display: none;
+}
+
+/* Botón del menú hamburguesa (inicialmente oculto) */
+.menu-button {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 999;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+}
+
+/* El icono del menú hamburguesa */
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu-icon {
+    top: 10px;
+}
+
+.menu-icon::before {
+    top: -10px;
+}
+
+.menu-icon::after {
+    top: 10px;
+}
+
+/* Media query para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+    /* Mostrar el botón hamburguesa */
+    .menu-button {
+        display: block;
+    }
+    
+    /* Cambiar estilo de la navegación */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -300px; /* Menú fuera de la pantalla por defecto */
+        width: 250px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding-top: 80px;
+        transition: right 0.3s ease;
+        z-index: 998;
+    }
+    
+    .main-nav li {
+        display: block;
+        margin: 15px 0;
+        text-align: center;
+    }
+    
+    .main-nav li a {
+        padding: 10px;
+        font-size: 18px;
+        display: block;
+    }
+    
+    /* Cuando el checkbox está marcado, mostrar el menú */
+    .menu-toggle:checked ~ .main-nav {
+        right: 0;
+    }
+    
+    /* Animación del icono hamburguesa */
+    .menu-toggle:checked ~ .menu-button .menu-icon {
+        background-color: transparent;
+    }
+    
+    .menu-toggle:checked ~ .menu-button .menu-icon::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    
+    .menu-toggle:checked ~ .menu-button .menu-icon::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    
+    /* Ajustar logo y otros elementos del header */
+    .logo {
+        width: 80px;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    
+    /* Ajustar título principal */
+    h1 {
+        font-size: 40px;
+        margin-top: 150px;
+    }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media only screen and (max-width: 480px) {
+    .menu-button {
+        top: 20px;
+        right: 20px;
+    }
+    
+    .main-nav {
+        width: 100%; /* El menú ocupa toda la pantalla */
+        right: -100%;
+    }
+    
+    h1 {
+        font-size: 30px;
+        margin-top: 120px;
+    }
 }
